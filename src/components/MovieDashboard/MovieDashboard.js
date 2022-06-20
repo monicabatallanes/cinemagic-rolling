@@ -9,6 +9,11 @@ const MovieDashboard = (props) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async(data) => {
+    const userJson = localStorage.getItem('cinemagicUser');
+    if(userJson !== null){
+      const userObj = JSON.parse(userJson); 
+      data.accessToken = userObj.token;
+    }
     try{
       if(agregar){
         const resp = await fetch(`${urlBackend}/movies/add`, {
@@ -23,12 +28,11 @@ const MovieDashboard = (props) => {
           alert(json.mensaje);
           cambiaEstadoAgregar(false);
         }
-  
       } else {
         if(editar){
           data.uid= objeto._id;
           const resp = await fetch(`${urlBackend}/movies/edit`, {
-            method:'POST',
+            method:'PUT',
             body: JSON.stringify(data),
             headers:{
               "Content-Type": "application/json"
@@ -47,13 +51,30 @@ const MovieDashboard = (props) => {
   } 
 
   const deleteData = async() => {
+    
+    const uid= objeto._id;
+    const data = {
+      uid : uid,
+    }
+    const userJson = localStorage.getItem('cinemagicUser');
+    if(userJson !== null){
+      const userObj = JSON.parse(userJson); 
+      data.accessToken = userObj.token;
+    }
     try {
       const confirm = window.confirm("Estas seguro que quieres borrar la pelicula?");
       if (!confirm) {
         return;
       }
-      const uid= objeto._id;
-      const resp = await fetch(`${urlBackend}/movies/delete/${uid}`)
+      // const uid= objeto._id;
+      // const resp = await fetch(`${urlBackend}/movies/delete/${uid}`)
+      const resp = await fetch(`${urlBackend}/movies/delete`, {
+        method:'DELETE',
+        body: JSON.stringify(data),
+        headers:{
+          "Content-Type": "application/json"
+        }
+      })
       const json = await resp.json()
       if(resp.ok){
         alert(json.mensaje);

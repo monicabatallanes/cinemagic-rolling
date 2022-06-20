@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 
 const LoginPanel = () => {
   const urlBackend = process.env.REACT_APP_URL; 
+  const admUser = process.env.REACT_APP_ADM_USER; 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async(data) => {
     const resp = await fetch(`${urlBackend}/users/login`, {
@@ -20,7 +21,11 @@ const LoginPanel = () => {
       }
       const userJson = JSON.stringify(userObj);
       localStorage.setItem('cinemagicUser', userJson);
-      window.location.href="/home";
+      if(userObj.user === admUser){
+        window.location.href="/admin";
+      } else {
+        window.location.href="/home";
+      }
     }
   }
 

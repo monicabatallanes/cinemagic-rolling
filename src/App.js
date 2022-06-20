@@ -6,6 +6,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Terms from "./pages/Terms/Terms";
 import Error from "./pages/Error/Error";
+import Admin from "./pages/Admin/Admin";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/home' element={<Home />} />
         <Route path='/detail' element={<Detail />} />
         <Route path='/*' element={<Error />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
     </>
   );

@@ -50,7 +50,7 @@ const RegisterPanel = () => {
               required: " Ingresa tu nombre completo.",
               minLength: {
                 value: 2,
-                message: "El minimo requerido de caracteres es 2"
+                message: "El mínimo requerido de caracteres es 2."
               }
             })}
           />
@@ -71,7 +71,7 @@ const RegisterPanel = () => {
               },
               maxLength: {
                 value: 10,
-                message: "El maximo permitido es de 10 caracteres."
+                message: "El máximo permitido es de 10 caracteres."
               }
             })} 
           />
@@ -110,7 +110,7 @@ const RegisterPanel = () => {
               },
               validate: (value) => {
                 const { password } = getValues();
-                return password === value || "Las contraseñas no coinciden";
+                return password === value || "Las contraseñas ingresadas no coinciden.";
               }
               })
             } 

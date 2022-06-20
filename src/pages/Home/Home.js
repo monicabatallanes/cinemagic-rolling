@@ -4,6 +4,8 @@ const Home = () => {
   if(userJson !== null){
     const userObj = JSON.parse(userJson); 
     console.log(userObj)
+    console.log('usuario: ', userObj.user)
+    console.log('token: ', userObj.token)
   }
 
   return ( 

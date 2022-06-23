@@ -1,3 +1,4 @@
+import Hero from "../../components/Hero/Hero";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Landing = () => {
@@ -5,7 +6,7 @@ const Landing = () => {
     <div>
        <Navbar />
        <div>
-          <h1>Landing Page</h1>
+         <Hero /> 
        </div>
     </div>
   );

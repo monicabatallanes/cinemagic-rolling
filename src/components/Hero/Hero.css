@@ -1,0 +1,87 @@
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.contenedor hr {
+    color: #ffff;
+    margin-right: 80px;
+    border: 2px solid #ffff;
+}
+
+.contenedor {
+    position: absolute;
+    top: 100px;
+    width: 600PX;
+    margin-left: 390px;
+}
+
+.contenedorIcons {
+    margin-top: 20px;
+}
+
+.hero-image {
+    margin: 10px
+}
+
+.heroTitle {
+    color: #ffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    margin-left: 120px;
+}
+
+.contenedor-boton {
+    margin-left: 170px;
+    margin-top: 50px;
+}
+
+.boton-login {
+    background-color: var(--color-secundario);
+    border-radius: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.boton-login:hover {
+    background-color: var(--color-principal);
+    color: #ffff;
+}
+
+.family {
+    width: 100%;
+}
+
+.planOferta {
+    margin-left: 110px;
+    margin-top: 50px;
+    width: 300px;
+    height: 150px;
+    border: 2px ridge #ffffff;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.planOferta h3 {
+    margin: 10px;
+    margin-left: 110px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.planOferta h4 {
+    margin-left: 50px;
+    font-size: 40px;
+}
+
+.planOferta p {
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 16px;
+}

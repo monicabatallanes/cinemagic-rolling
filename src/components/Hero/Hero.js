@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <div className="contenedor-boton">
           <button className="boton-login">
-            <NavLink to="/" className="boton-login">
+            <NavLink to="/register" className="boton-login">
               APROVECHA AHORA
             </NavLink>
           </button>

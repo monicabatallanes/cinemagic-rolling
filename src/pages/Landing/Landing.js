@@ -1,15 +1,19 @@
 import Hero from "../../components/Hero/Hero";
-import Navbar from "../../components/Navbar/Navbar";
+import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import PlanMarketing from "../../components/PlanMarketing/PlanMarketing";
 
 const Landing = () => {
   return ( 
     <div>
-       <Navbar />
-       <div>
-         <Hero />
-         <PlanMarketing /> 
-       </div>
+      <header>
+        <MenuNavegacion />
+        <Hero />
+      </header>
+      <main>
+        <section>
+          <PlanMarketing />
+        </section>  
+      </main>
     </div>
   );
 }

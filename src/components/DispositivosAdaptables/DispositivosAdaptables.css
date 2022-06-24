@@ -1,0 +1,34 @@
+.contenedor-adaptable {
+  text-align: center;
+}
+
+.contenedor-adaptable h3 {
+  font-size: 28px;
+  font-weight: bold;  
+}
+
+.contenedor-dispositivo {
+  width: 100%;  
+  display: flex;  
+  margin-top: 80px;
+}
+
+.dispositivo {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.dispositivo h4 {
+  margin-top: 10px;  
+}
+
+.dispositivo p {
+  font-size: 16px;  
+  margin: 10px;
+}
+
+.dispositivo-img {
+  width: 150px;
+  height: 100px;  
+}

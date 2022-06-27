@@ -1,0 +1,13 @@
+.img-error{
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+@media (max-width: 560px) {
+    .img-error{
+        height: 400px;
+        width: auto;
+    }
+    
+}

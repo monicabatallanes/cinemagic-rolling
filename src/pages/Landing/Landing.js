@@ -1,4 +1,5 @@
 import DispositivosAdaptables from "../../components/DispositivosAdaptables/DispositivosAdaptables";
+import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import PlanMarketing from "../../components/PlanMarketing/PlanMarketing";
@@ -31,6 +32,9 @@ const Landing = () => {
           <DispositivosAdaptables />
         </section>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

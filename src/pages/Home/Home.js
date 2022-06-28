@@ -4,6 +4,7 @@ import axios from "axios";
 import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import Carrusel from "../../components/Carrusel/Carrusel";
 import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
+import "./home.css"
 
 
 const Home = () => {
@@ -45,8 +46,8 @@ const Home = () => {
             
           </section>
           <section>
-            <h2 className="text-center m-2 text-white">Recomendados</h2>
-            <ul className='grilla'>
+            <h2 className="titulo-home text-center m-2 text-white">Recomendados</h2>
+            <ul className="grilla">
               {
                 pelis.map(peli => <PelisGrilla imagen={peli.image} titulo={peli.title} key={peli.id} id={peli.id} /> )
               }

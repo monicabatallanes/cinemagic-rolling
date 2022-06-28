@@ -1,0 +1,19 @@
+.detail-container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col{
+    max-width: 500px;
+    margin: 15px;
+    height: auto;
+    height: 80%;
+}
+
+.movie-image{
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+}

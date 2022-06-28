@@ -1,0 +1,40 @@
+.grilla{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.pelis{
+    list-style: none;
+    font-size: medium;
+    text-align: center;
+}
+.pelis:hover{
+    opacity: 0.8;
+}
+
+.img-grid{
+    border-radius: 10px;
+    background-color: azure;
+    width: 180px;
+    height: 230px;
+}
+
+@media(max-width:560px){
+    .grilla{
+        grid-template-columns: 100%;
+    }
+   
+    .img-grid{
+        width: 90%;
+        height: auto;
+    }
+}
+
+.handleclickButton{
+    border-radius: 5px;
+    background-color: black;
+    
+}

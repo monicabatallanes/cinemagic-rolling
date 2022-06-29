@@ -1,21 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
+import Navbar from "../../components/Navbar/Navbar";
 import Carrusel from "../../components/Carrusel/Carrusel";
 import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
-import "./home.css"
+import Footer from "../../components/Footer/Footer";
+
 
 
 const Home = () => {
   
-  /* const userJson = localStorage.getItem('cinemagicUser');
-  if(userJson !== null){
-    const userObj = JSON.parse(userJson); 
-    console.log(userObj)
-    console.log('usuario: ', userObj.user)
-    console.log('token: ', userObj.token)
-  } */
+  
   const [ pelis, setPelis] = useState([])
   
   const getPeli = async() => {
@@ -37,7 +32,7 @@ const Home = () => {
     return(
         <>
         <header>
-          <MenuNavegacion/>
+          <Navbar/>
         </header>
 
         <main>
@@ -46,7 +41,7 @@ const Home = () => {
             
           </section>
           <section>
-            <h2 className="titulo-home text-center m-2 text-white">Recomendados</h2>
+            <h2 className="titulo-home text-center m-2 text-white">Películas</h2>
             <ul className="grilla">
               {
                 pelis.map(peli => <PelisGrilla imagen={peli.image} titulo={peli.title} key={peli.id} id={peli.id} /> )
@@ -54,6 +49,9 @@ const Home = () => {
             </ul>
           </section>
         </main>
+        <footer>
+          <Footer/>
+        </footer>
         </>
        
     )

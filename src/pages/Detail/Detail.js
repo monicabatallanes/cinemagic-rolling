@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import "./detail.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 
 const Detail = () => {
@@ -25,9 +26,9 @@ const Detail = () => {
   return (
       <> 
       <header>
-          <MenuNavegacion/>
+          <Navbar/>
       </header>
-      <main className="detail-container">
+      <section className="detail-container">
           <div className="col d-flex justify-content-center">
               <img className="movie-image" src={detalle.image} alt={detalle.title} />
           </div>
@@ -38,15 +39,20 @@ const Detail = () => {
               <p className="text-white"><strong>Actores: </strong>{detalle.stars}</p>
               <p className="text-white"><strong>Directores: </strong>{detalle.directors}</p>
           </div>
-      </main>
-         
+      </section>
+       <section>
          <div className="d-flex justify-content-center m-4">
             <Link to={"/home"}>
             <Button variant="outline-danger ">Volver</Button>
             </Link>
          </div>
+        </section>  
+         
+         <footer>
+           <Footer/>
+         </footer>
+         
 
-      
       </>
       
   );

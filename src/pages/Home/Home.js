@@ -2,10 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
-import Carrusel from "../../components/Carrusel/Carrusel";
 import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
 import Footer from "../../components/Footer/Footer";
-
+import "./home.css"
 
 
 const Home = () => {
@@ -37,7 +36,7 @@ const Home = () => {
 
         <main>
           <section>
-            <Carrusel/>
+           
             
           </section>
           <section>

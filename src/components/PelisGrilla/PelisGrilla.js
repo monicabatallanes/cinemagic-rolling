@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "../PelisGrilla/pelisgrilla.css";
 
 
@@ -20,14 +19,11 @@ const PelisGrilla = ({imagen, titulo, id}) => {
   
       return (
       
-           <li className="pelis">
-              {/* <Link to={"/detail" }> */}
-                <img className="img-grid" src={imagen} alt={titulo}/>
-                <button onClick={()=> handleClick(id)} className="handleclickButton text-white">{titulo}</button>
-              {/* </Link> */}
-            </li>
-          
-    );
-  }
+          <li className="pelis">
+              <img className="img-grid" src={imagen} alt={titulo}/>
+              <button onClick={()=> handleClick(id)} className="handleclickButton text-white">{titulo}</button>
+          </li>
+      );
+  };
   
   export default PelisGrilla;

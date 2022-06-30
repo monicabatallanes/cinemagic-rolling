@@ -21,10 +21,10 @@ const PelisGrilla = ({imagen, titulo, id}) => {
       return (
       
            <li className="pelis">
-              <Link to={"/detail" }>
+              {/* <Link to={"/detail" }> */}
                 <img className="img-grid" src={imagen} alt={titulo}/>
                 <button onClick={()=> handleClick(id)} className="handleclickButton text-white">{titulo}</button>
-              </Link>
+              {/* </Link> */}
             </li>
           
     );

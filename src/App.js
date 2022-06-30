@@ -7,6 +7,8 @@ import Register from "./pages/Register/Register";
 import Terms from "./pages/Terms/Terms";
 import Error from "./pages/Error/Error";
 import Admin from "./pages/Admin/Admin";
+import Footer from "./components/Footer/Footer";
+
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
         <Route path='/*' element={<Error />} />
         <Route path='/admin' element={<Admin />} />
       </Routes>
+      <footer class="mt-auto">
+        <Footer />
+      </footer>
     </>
   );
 }

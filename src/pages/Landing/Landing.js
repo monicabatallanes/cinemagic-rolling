@@ -32,9 +32,6 @@ const Landing = () => {
           <DispositivosAdaptables />
         </section>
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

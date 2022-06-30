@@ -20,7 +20,7 @@ const Home = () => {
   
   const getPeli = async() => {
     
-    const res = await axios.get('https://imdb-api.com/en/API/MostPopularMovies/k_vb7atl1v')
+    const res = await axios.get('https://imdb-api.com/en/API/MostPopularMovies/k_q9mj0i81')
     console.log(res.data.items)
 
     const pelisFiltradas = res.data.items.filter(peli => peli.rank <= 24)

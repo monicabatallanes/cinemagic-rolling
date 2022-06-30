@@ -27,7 +27,7 @@ const Admin = () => {
   },[isEditing])
 
   return ( 
-    <div class="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100">
       <div className="container text-light">
         <h1 className="d-inline mr-2">Bienvenido Administrador</h1>
         

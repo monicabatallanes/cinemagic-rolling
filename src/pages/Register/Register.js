@@ -4,7 +4,7 @@ import LogoCmPanel from "../../components/LogoCm/LogoCm";
 
 const Register = () => {
   return ( 
-    <div class="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100">
       <div className="container w-75 mt-5 border-0">
         <div className="row align-items-stretch">
           <div className=" logo-login col-lg-5 col-xl-6 border-0 d-none d-lg-block ">

@@ -8,7 +8,7 @@ const MenuNavegacion = ({ imageSrc }) => {
   return (
     <nav className="navbar">
       <img src={Logo} alt="logo" className={style.titleNabvar} />
-      <div class={style.botonContainer}>
+      <div className={style.botonContainer}>
         <NavLink to="/register" className="boton-suscribite">
           Suscríbite ahora
         </NavLink>

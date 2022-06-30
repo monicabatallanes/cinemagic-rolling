@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className={style.contenedorNav}>
       <nav className="navbar navbar-light fixed-top">
         <div className="container-fluid d-flex flex-row-reverse">
-          <div class={style.botonContainer}>
+          <div className={style.botonContainer}>
             <NavLink to="/register" className={style.botonNav}>
               Suscríbite ahora
             </NavLink>
@@ -53,7 +53,7 @@ const Navbar = () => {
                       type="search"
                       placeholder="¿Que está buscando?"
                     />
-                    <button class="btn btn-outline-primary" type="submit">
+                    <button className="btn btn-outline-primary" type="submit">
                       Buscar
                     </button>
                   </form>

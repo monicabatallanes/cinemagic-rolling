@@ -23,7 +23,7 @@ const App = () => {
         <Route path='/*' element={<Error />} />
         <Route path='/admin' element={<Admin />} />
       </Routes>
-      <footer class="mt-auto">
+      <footer className="mt-auto">
         <Footer />
       </footer>
     </>

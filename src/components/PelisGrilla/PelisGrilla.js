@@ -4,10 +4,10 @@ import "../PelisGrilla/pelisgrilla.css";
 
 
 const PelisGrilla = ({imagen, titulo, id}) => {
-  
+  console.log('prop titulo recibido: ', titulo);
 
     const handleClick = async(id) => {
-      const resp = await axios.get(`https://imdb-api.com/en/API/Title/k_vb7atl1v/${id}`)
+      const resp = await axios.get(`https://imdb-api.com/en/API/Title/k_q9mj0i81/${id}`)
       console.log(resp.data)
       
       const newJson = JSON.stringify(resp.data)

@@ -48,10 +48,6 @@ const Detail = () => {
          </div>
         </section>  
          
-         <footer>
-           <Footer/>
-         </footer>
-         
 
       </>
       

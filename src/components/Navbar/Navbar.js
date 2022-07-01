@@ -32,7 +32,7 @@ const Navbar = () => {
             <img src={menuNavbar} className={style.imgMenu} alt="logo"></img>
           </button>
           <div
-            className="offcanvas offcanvas-start bg-dark"
+            className="offcanvas offcanvas-start bg-black"
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"

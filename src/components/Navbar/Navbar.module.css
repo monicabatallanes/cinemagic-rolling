@@ -1,7 +1,7 @@
 .contenedorNav {
   background-size: cover;
   min-height: 80px;
-  background-color: rgb(15, 15, 15);
+  background-color: black;
 }
 
 @media screen and (max-width: 776px) {
@@ -39,8 +39,8 @@
 }
 
 #menu {
-  background-color: transparent;
   border: none;
+  background-color: black;
 }
 
 .imgMenu {

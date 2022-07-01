@@ -21,6 +21,7 @@ const Landing = () => {
           <PlanMarketing />
         </section>
         <section>
+          <h3 className="text-center">Estrenos que se convertirán en nuevos favoritos.</h3>
           <Slider
             video={"https://youtu.be/0kna4HKOi5E"}
             titulo={"El Padre De La Novia"}

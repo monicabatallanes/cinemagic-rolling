@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MovieDashboard from "../../components/MovieDashboard/MovieDashboard";
 import MovieListPanel from "../../components/MovieListPanel/MovieListPanel";
+import "./admin.css"
+
 
 const Admin = () => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -8,10 +10,15 @@ const Admin = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [dataObj, setdataObj] = useState("");
   const [peliculasRegistradas, setPeliculasRegistradas] = useState([]);
+
   const getPeliculasRegistradas = async() => {
     const resp = await fetch(`${urlBackend}/movies/list`)
     const json = await resp.json()
     setPeliculasRegistradas(json.movies);
+  }
+  const logOut = () => {
+    localStorage.clear();
+    window.location.href="/login";
   }
 
   useEffect( () => {
@@ -28,6 +35,7 @@ const Admin = () => {
 
   return ( 
     <>
+    <button type="button" className="btn-close boton-cerrar" aria-label="Close" onClick={() => logOut()} ></button>
     <div className="container text-light">
       <h1 className="d-inline mr-2">Bienvenido Administrador</h1>
       

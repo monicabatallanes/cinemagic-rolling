@@ -2,7 +2,6 @@
 .hero {
     width: 100%;
     height: 100vh;
-    position: relative;
 }
 
 .contenedor hr {
@@ -12,10 +11,10 @@
 }
 
 .contenedor {
-    position: absolute;
     top: 100px;
     width: 600PX;
-    margin-left: 390px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contenedorIcons {
@@ -40,7 +39,7 @@
 }
 
 .boton-login {
-    background-color: var(--color-secundario);
+    background-color: #023e8a;
     border-radius: 20px;
     font-size: 14px;
     text-decoration: none;
@@ -50,7 +49,7 @@
 }
 
 .boton-login:hover {
-    background-color: var(--color-principal);
+    background-color: #03045e;
     color: #ffff;
 }
 
@@ -102,3 +101,37 @@
     filter: blur(15px);
     transform: scale(1.0,1.2);
 } */
+
+@media screen and (max-width: 376px) {
+  .contenedor {
+    width: 374PX;
+  } 
+  
+    .hero-image {
+    width: 50px;
+    height: 30px;
+    margin: 10px
+  }  
+  
+  .planOferta {
+    margin-left: 40px;
+    margin-top: 50px;
+    width: 300px;
+    height: 150px;
+  }
+
+  .heroTitle {
+    margin-left: 60px;
+  }
+
+  .contenedor-boton {
+      margin-left: 100px;
+      margin-top: 50px;
+  }
+
+  .contenedor hr {
+    width: 300px;
+    margin-left: 40px;
+  }
+
+}

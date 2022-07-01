@@ -30,7 +30,12 @@ const MovieDashboard = (props) => {
         const json = await resp.json()
         if(resp.ok){
           alert(json.mensaje);
-          cambiaEstadoAgregar(false);
+          if(json.estado === 401){
+            localStorage.clear();
+            window.location.href="/login";
+          } else {
+            cambiaEstadoAgregar(false);
+          }
         }
       } else {
         if(editar){
@@ -45,7 +50,12 @@ const MovieDashboard = (props) => {
           const json = await resp.json()
           if(resp.ok){
             alert(json.mensaje);
-            cambiaEstadoEditar(false);
+            if(json.estado === 401){
+              localStorage.clear();
+              window.location.href="/login";
+            } else {
+              cambiaEstadoEditar(false);
+            }
           }
         }
       }
@@ -81,7 +91,12 @@ const MovieDashboard = (props) => {
       const json = await resp.json()
       if(resp.ok){
         alert(json.mensaje);
-        cambiaEstadoEditar(false);
+        if(json.estado === 401){
+          localStorage.clear();
+          window.location.href="/login";
+        } else {
+          cambiaEstadoEditar(false);
+        }
       }
     } catch (err) {
       alert(err);

@@ -4,16 +4,18 @@ import logo from "../../assets/images/cinemagic-logo.svg";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
+  const logOut = () => {
+    localStorage.clear();
+  }
+
   return (
     <div className={style.contenedorNav}>
       <nav className="navbar navbar-light fixed-top">
         <div className="container-fluid d-flex flex-row-reverse">
-          <div className={style.botonContainer}>
-            <NavLink to="/register" className={style.botonNav}>
-              Suscríbite ahora
-            </NavLink>
-            <NavLink to="/login" className={style.botonNav}>
-              Iniciar sesión
+          <div class={style.botonContainer}>
+            <NavLink to="/login" className={style.botonNav} onClick={logOut}>
+              Cerrar sesión
             </NavLink>
           </div>
           <div>
@@ -30,7 +32,7 @@ const Navbar = () => {
             <img src={menuNavbar} className={style.imgMenu} alt="logo"></img>
           </button>
           <div
-            className="offcanvas offcanvas-start bg-dark"
+            className="offcanvas offcanvas-start bg-black"
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"

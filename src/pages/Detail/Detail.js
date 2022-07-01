@@ -4,8 +4,6 @@ import "./detail.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-
 
 const Detail = () => {
 
@@ -24,7 +22,7 @@ const Detail = () => {
 
 
   return (
-      <> 
+      <div class="d-flex flex-column min-vh-100"> 
       <header>
           <Navbar/>
       </header>
@@ -48,12 +46,8 @@ const Detail = () => {
          </div>
         </section>  
          
-         <footer>
-           <Footer/>
-         </footer>
-         
 
-      </>
+      </div>
       
   );
 };

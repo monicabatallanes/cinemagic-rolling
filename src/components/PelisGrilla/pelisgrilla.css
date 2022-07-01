@@ -11,9 +11,8 @@
     font-size: medium;
     text-align: center;
 }
-
 .pelis:hover{
-    filter: opacity(.5);
+    opacity: 0.8;
 }
 
 .img-grid{

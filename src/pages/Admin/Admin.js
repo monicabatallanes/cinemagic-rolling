@@ -34,54 +34,54 @@ const Admin = () => {
   },[isEditing])
 
   return ( 
-    <>
-    <button type="button" className="btn-close boton-cerrar" aria-label="Close" onClick={() => logOut()} ></button>
-    <div className="container text-light">
-      <h1 className="d-inline mr-2">Bienvenido Administrador</h1>
-      
-      <div className="mb-1">
+    <div className="d-flex flex-column min-vh-100">
+      <button type="button" className="btn-close boton-cerrar" aria-label="Close" onClick={() => logOut()} ></button>
+      <div className="container text-light">
+        <h1 className="d-inline mr-2">Bienvenido Administrador</h1>
+        
+        <div className="mb-1">
+          {
+            isAdding? (
+              <button 
+                className="btn boton-login" 
+                onClick={() => setIsAdding(false)}
+              >
+                Volver
+              </button>
+            ) : (
+              <div>
+              {
+                isEditing? (
+                  <button 
+                    className="btn boton-login"
+                    onClick={() => setIsEditing(false)}
+                  >
+                    Volver
+                  </button>
+                ):(
+                  <button 
+                    className="btn boton-login"
+                    onClick={() => setIsAdding(true)}
+                  >
+                    Agregar
+                  </button>
+                )
+              }
+              </div>
+            )
+          }
+        </div>
+
         {
-          isAdding? (
-            <button 
-              className="btn boton-login" 
-              onClick={() => setIsAdding(false)}
-            >
-              Volver
-            </button>
-          ) : (
-            <div>
-            {
-              isEditing? (
-                <button 
-                  className="btn boton-login"
-                  onClick={() => setIsEditing(false)}
-                >
-                  Volver
-                </button>
-              ):(
-                <button 
-                  className="btn boton-login"
-                  onClick={() => setIsAdding(true)}
-                >
-                  Agregar
-                </button>
-              )
-            }
-            </div>
+          (!isAdding && !isEditing)? (
+            <MovieListPanel peliculas={peliculasRegistradas} cambiaEstadoEditar={setIsEditing} cambiaEstadoObjeto={setdataObj} />
+          ):(
+            <MovieDashboard editar={isEditing}  agregar={isAdding} objeto={dataObj} cambiaEstadoEditar={setIsEditing} cambiaEstadoAgregar={setIsAdding}  />
           )
         }
+
       </div>
-
-      {
-        (!isAdding && !isEditing)? (
-          <MovieListPanel peliculas={peliculasRegistradas} cambiaEstadoEditar={setIsEditing} cambiaEstadoObjeto={setdataObj} />
-        ):(
-          <MovieDashboard editar={isEditing}  agregar={isAdding} objeto={dataObj} cambiaEstadoEditar={setIsEditing} cambiaEstadoAgregar={setIsAdding}  />
-        )
-      }
-
     </div>
-    </>
   );
 }
 

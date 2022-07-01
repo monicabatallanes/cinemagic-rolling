@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
-import Footer from "../../components/Footer/Footer";
 import "./home.css"
 
 
@@ -14,14 +13,14 @@ const Home = () => {
   
   const getPeli = async() => {
     
-    const res = await axios.get('https://imdb-api.com/en/API/MostPopularMovies/k_vb7atl1v')
-    console.log(res.data.items)
+    const res = await axios.get('https://imdb-api.com/en/API/MostPopularMovies/k_q9mj0i81')
+    console.log('respuesta api: ', res.data.items)
 
     const pelisFiltradas = res.data.items.filter(peli => peli.rank <= 24)
     setPelis(pelisFiltradas)
 
   } 
-  console.log(pelis)
+  console.log('pelis filtradas: ',pelis)
   
   useEffect(() => {
       getPeli();
@@ -29,7 +28,7 @@ const Home = () => {
 
   
     return(
-        <>
+        <div class="d-flex flex-column min-vh-100">
         <header>
           <Navbar/>
         </header>
@@ -48,10 +47,7 @@ const Home = () => {
             </ul>
           </section>
         </main>
-        <footer>
-          <Footer/>
-        </footer>
-        </>
+        </div>
        
     )
 } 

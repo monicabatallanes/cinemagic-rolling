@@ -55,7 +55,7 @@ const Navbar = () => {
                       type="search"
                       placeholder="¿Que está buscando?"
                     />
-                    <button class="btn btn-outline-primary" type="submit">
+                    <button className="btn btn-outline-primary" type="submit">
                       Buscar
                     </button>
                   </form>

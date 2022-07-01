@@ -28,7 +28,7 @@ const Home = () => {
 
   
     return(
-        <>
+        <div class="d-flex flex-column min-vh-100">
         <header>
           <Navbar/>
         </header>
@@ -47,7 +47,7 @@ const Home = () => {
             </ul>
           </section>
         </main>
-        </>
+        </div>
        
     )
 } 

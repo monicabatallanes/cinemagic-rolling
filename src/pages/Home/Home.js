@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
 import "./home.css"
+import CarruselHome from "../../components/CarruselHome/CarruselHome";
 
 
 const Home = () => {
@@ -34,8 +35,8 @@ const Home = () => {
         </header>
 
         <main>
-          <section>
-           
+          <section className="mt-3">
+              <CarruselHome/>
             
           </section>
           <section>

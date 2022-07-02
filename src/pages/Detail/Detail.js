@@ -31,19 +31,19 @@ const Detail = () => {
               <img className="movie-image" src={detalle.image} alt={detalle.title} />
           </div>
           <div className="col">
-              <p className='titulo-detail'>{detalle.title}</p>
-              <p className='resumen text-white'><strong>Resumen: </strong>{detalle.plot} </p>
+              <p className="titulo-detail">{detalle.title}</p>
+              <p className="resumen text-white"><strong>Resumen: </strong>{detalle.plot} </p>
               <p className="text-white"><strong>Género: </strong>{detalle.genres}</p>
               <p className="text-white"><strong>Actores: </strong>{detalle.stars}</p>
               <p className="text-white"><strong>Directores: </strong>{detalle.directors}</p>
           </div>
       </section>
 
-      <section>
-            <p className='titulo-detail d-flex justify-content-center'>Reparto de la película</p>
-                <div className='grilla mt-3'>
+      <section className="d-none d-md-block">
+            <p className="titulo-detail d-flex justify-content-center">Reparto de la película</p>
+                <div className="grilla mt-3">
                   {
-                    detalle.actorList?.map((actor) => <div ><img className='img-grid' src={actor.image} alt={actor.id}/> <p className='text-center mt-1 mb-2'>{actor.name} </p></div>)
+                    detalle.actorList?.map((actor) => <div ><img className="img-grid" src={actor.image} alt={actor.id}/> <p className='text-center mt-1 mb-2'>{actor.name} </p></div>)
                   }
                 </div>
       </section>

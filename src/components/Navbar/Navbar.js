@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className={style.contenedorNav}>
       <nav className="navbar navbar-light fixed-top">
         <div className="container-fluid d-flex flex-row-reverse">
-          <div class={style.botonContainer}>
+          <div className={style.botonContainer}>
             <NavLink to="/login" className={style.botonNav} onClick={logOut}>
               Cerrar sesión
             </NavLink>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </div>
                 <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li>
-                    <NavLink to="/login" className={style.navItem}>
+                    <NavLink to="/home" className={style.navItem}>
                       Películas
                     </NavLink>
                   </li>

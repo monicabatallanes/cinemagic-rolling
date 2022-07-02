@@ -6,15 +6,35 @@ import { NavLink } from "react-router-dom";
 
 const MenuNavegacion = ({ imageSrc }) => {
   return (
-    <nav className="navbar">
-      <img src={Logo} alt="logo" className={style.titleNabvar} />
-      <div className={style.botonContainer}>
-        <NavLink to="/register" className="boton-suscribite">
-          Suscríbite ahora
+    <nav className="navbar navbar-expand-sm justify-content-between navbar-dark fixed-top">
+      <div className="menu-header">
+        <a className="navbar-brand" href="/">
+          <img src={Logo} className={style.titleNabvar} />
+        </a>
+      </div>
+      <div className="justify-content-end d-flex  d-sm-none">
+        <div className="nav-item">
+          <NavLink to="/register" className="boton-suscribite" >
+            Suscríbite
         </NavLink>
-        <NavLink to="/login" className={style.botonNav}>
-          Iniciar sesión
+        </div>
+        <div className="nav-item">
+          <NavLink to="/login" className={style.botonNav} >
+            Ingresa
+          </NavLink>
+        </div>
+      </div>
+      <div className="justify-content-end d-none d-sm-flex">
+        <div className="nav-item">
+          <NavLink to="/register" className="boton-suscribite" >
+            Suscríbite ahora
         </NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink to="/login" className={style.botonNav} >
+            Ingresa
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

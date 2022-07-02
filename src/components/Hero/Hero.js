@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-
   const urlBackend = process.env.REACT_APP_URL;
   const [lastMovie, setLastMovie] = useState({});
 
@@ -60,7 +59,7 @@ const Hero = () => {
             </NavLink>
           </button>
         </div>
-        <hr />
+        {/* <hr /> */}
       </div>
     </div>
   );

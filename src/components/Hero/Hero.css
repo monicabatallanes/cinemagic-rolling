@@ -1,56 +1,55 @@
-
 .hero {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: auto;
 }
 
 .contenedor hr {
-    color: #ffff;
-    margin-right: 80px;
-    border: 2px solid #ffff;
+  color: #ffff;
+  margin-right: 80px;
+  border: 2px solid #ffff;
 }
 
 .contenedor {
-    top: 100px;
-    width: 600PX;
-    margin-left: auto;
-    margin-right: auto;
+  top: 100px;
+  width: 600PX;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contenedorIcons {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .hero-image {
-    margin: 10px
+  margin: 10px;
 }
 
 .heroTitle {
-    color: #ffff;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px;
-    margin-left: 120px;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  margin-left: 120px;
 }
 
 .contenedor-boton {
-    margin-left: 170px;
-    margin-top: 50px;
+  margin-left: 170px;
+  margin-top: 50px;
 }
 
 .boton-login {
-    background-color: #023e8a;
-    border-radius: 20px;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 8px;
-    font-weight: bold;
-    color: #ffff;
+  background-color: #023e8a;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px;
+  font-weight: bold;
+  color: #ffff;
 }
 
 .boton-login:hover {
-    background-color: #03045e;
-    color: #ffff;
+  background-color: #03045e;
+  color: #ffff;
 }
 
 .family {
@@ -58,80 +57,74 @@
 }
 
 .planOferta {
-    margin-left: 110px;
-    margin-top: 50px;
-    width: 300px;
-    height: 150px;
-    border: 2px ridge #ffffff;
-    border-radius: 10px;
-    color: #ffffff;
+  margin-left: 110px;
+  margin-top: 50px;
+  width: 300px;
+  height: 150px;
+  border: 2px ridge #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
 .planOferta h3 {
-    margin: 10px;
-    margin-left: 110px;
-    font-size: 16px;
-    font-weight: bold;
+  margin: 10px;
+  margin-left: 110px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .planOferta h4 {
-    margin-left: 50px;
-    font-size: 40px;
+  margin-left: 50px;
+  font-size: 40px;
 }
 
 .planOferta p {
-    margin-left: 80px;
-    font-weight: bold;
-    font-size: 16px;
+  margin-left: 80px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .fondo-blur{
-    position: relative;
-    overflow: hidden;
-    margin-top: 70px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
   }
   
 /* .fondo-blur::before{
-    content: '';
-    display: block;
-    background: inherit;
-    position: absolute;
-    width: 100%; height: 100%;
-    left: 0; top: 0;
-    filter: blur(15px);
-    transform: scale(1.0,1.2);
+  content: '';
+  display: block;
+  background: inherit;
+  position: absolute;
+  width: 100%; height: 100%;
+  left: 0; top: 0;
+  filter: blur(15px);
+  transform: scale(1.0,1.2);
 } */
 
 @media screen and (max-width: 376px) {
   .contenedor {
     width: 374PX;
   } 
-  
-    .hero-image {
-    width: 50px;
+  .hero-image {
+    width: auto;
     height: 30px;
     margin: 10px
   }  
-  
   .planOferta {
     margin-left: 40px;
     margin-top: 50px;
     width: 300px;
     height: 150px;
   }
-
   .heroTitle {
     margin-left: 60px;
   }
-
   .contenedor-boton {
       margin-left: 100px;
       margin-top: 50px;
   }
-
   .contenedor hr {
     width: 300px;
     margin-left: 40px;
   }
-
 }

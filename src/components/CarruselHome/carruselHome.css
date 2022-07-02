@@ -1,0 +1,37 @@
+.carrusel {
+    display: flex; 
+    margin-top: 100px;  
+  }
+  
+  .carrusel-contenedor {
+    width: 550px;
+    height: 350px;  
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .carruselItem {
+    width: 550px;  
+    height: 350px;  
+  }
+  
+  .img-carrusel {
+    width: 100%;
+    height: 80%;
+    border-radius: 15px;
+  }
+  
+  @media (max-width: 560px){
+    .carrusel-contenedor{
+      width: 100%;
+      height: 200px;
+    }
+    .carruselItem{
+      width: 100%;
+      height: 200px;
+    }
+    .img-carrusel{
+      width: 100%;
+      height: 200px; 
+    }
+  }

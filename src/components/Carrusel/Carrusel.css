@@ -20,3 +20,18 @@
   height: 80%;
   border-radius: 15px;
 }
+
+@media (max-width: 560px){
+  .carrusel-contenedor{
+    width: 100%;
+    height: 200px;
+  }
+  .carruselItem{
+    width: 100%;
+    height: 200px;
+  }
+  .img-carrusel{
+    width: 100%;
+    height: 200px;
+  }
+}

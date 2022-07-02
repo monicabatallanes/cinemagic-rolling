@@ -10,27 +10,24 @@
     flex-direction: column;
     margin-top: 10px;
   }
-
   .botonNav {
     margin-top: 5px;
   }
-
   .titleNabvar {
-    width: 150px;
+    width: auto;
     height: 20px;
   }
-
 }
 
 @media screen and (max-width: 376px) {
   .titleNabvar {
-  width: 100px;
+    width: 140px;
   }
 } 
 
 @media screen and (min-width: 778px) {
   .botonNav {
-    margin-right: 60px;
+    margin-right: auto;
   }
 }  
 
@@ -91,8 +88,6 @@ hr {
   text-decoration: none;
 }
 
-
-
 .buscadorNavbar {
   margin-right: 15px;
   margin-bottom: 30px;
@@ -105,3 +100,10 @@ hr {
   font-size: 16px;
 }
 
+@media screen and (max-width: 376px) {
+  .botonNav {
+      font-size: 14px;
+      padding: 4px;
+      margin-right: auto;
+  }
+}

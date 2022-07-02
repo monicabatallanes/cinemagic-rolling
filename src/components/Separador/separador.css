@@ -1,0 +1,12 @@
+.separador hr {
+  color: #ffff;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid #ffff;
+}
+
+.separador {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

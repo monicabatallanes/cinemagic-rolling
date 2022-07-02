@@ -1,24 +1,26 @@
 import Carrusel from "../../components/Carrusel/Carrusel";
 import DispositivosAdaptables from "../../components/DispositivosAdaptables/DispositivosAdaptables";
-import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import PlanMarketing from "../../components/PlanMarketing/PlanMarketing";
+import Separador from "../../components/Separador/Separador";
 import Slider from "../../components/Slider/Slider";
-
-
 
 const Landing = () => {
   return (
     <div>
       <header>
         <MenuNavegacion />
-        <Hero />
       </header>
       <main>
         <section>
-          <Carrusel />
+          <Hero />
+          <Separador />
+        </section>
+        <section>
+          {/* <Carrusel /> */}
           <PlanMarketing />
+          <Separador />
         </section>
         <section>
           <h3 className="text-center">Estrenos que se convertirán en nuevos favoritos.</h3>

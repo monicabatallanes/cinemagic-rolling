@@ -17,3 +17,21 @@
     height: auto;
     border-radius: 15px;
 }
+
+.resumen{
+    text-align: justify;
+}
+
+.titulo-detail{
+    padding: 30px;
+    text-shadow: 2px 4px 24px rgba(0, 255, 234, 0.97);
+    font-size: larger;
+}
+
+@media (max-width: 560px){
+    .titulo-detail{
+        padding: 10px;
+        text-align: center;
+    }
+    
+}

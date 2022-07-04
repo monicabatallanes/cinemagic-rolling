@@ -4,33 +4,6 @@
   background-color: black;
 }
 
-@media screen and (max-width: 776px) {
-  .botonContainer{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .botonNav {
-    margin-top: 5px;
-  }
-  .titleNabvar {
-    width: auto;
-    height: 20px;
-  }
-}
-
-@media screen and (max-width: 376px) {
-  .titleNabvar {
-    width: 140px;
-  }
-} 
-
-@media screen and (min-width: 778px) {
-  .botonNav {
-    margin-right: auto;
-  }
-}  
-
 .titleNabvar {
   height: 40px;
 }
@@ -100,10 +73,49 @@ hr {
   font-size: 16px;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 776px) {
+  .botonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
   .botonNav {
-      font-size: 14px;
-      padding: 4px;
-      margin-right: auto;
+    margin-top: 5px;
+  }
+
+  .titleNabvar {
+    width: auto;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  
+  .titleNabvar {
+    width: 140px;
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+
+  .botonNav {
+    font-size: 14px;
+    padding: 4px;
+    margin-right: auto;
+  }
+
+  .contenedorNav {
+    position: relative;
+  }
+
+  #menu {
+    position: absolute;
+    margin-right: 250px;
+    margin-top: 15px;
+  }
+
+  .imgMenu {
+    width: 40px;
+    height: 40px;
   }
 }

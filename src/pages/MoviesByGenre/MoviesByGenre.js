@@ -2,15 +2,17 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
-import CarouselSlider from "../../components/CarouselSlider/CarouselSlider";
-import "./home.css";
-import GenresData from "../../Genres.json";
+import PelisGrilla from "../../components/PelisGrilla/PelisGrilla";
+import "./moviesByGenre.css"
+import CarruselHome from "../../components/CarruselHome/CarruselHome";
 import Footer from "../../components/Footer/Footer";
+import { useParams } from "react-router-dom";
 
-const Home = () => {
+const MoviesByGenre = () => {
   const urlBackend = process.env.REACT_APP_URL; 
   const [ pelis, setPelis] = useState([])
   const mostrarMenu=true;
+  const {handle} = useParams();
 
   const getPeli = async() => {
     const userJson = localStorage.getItem('cinemagicUser');
@@ -23,9 +25,11 @@ const Home = () => {
       headers: { Authorization: `${token}` }
     };
     const bodyParameters = {
-      elementos: 10
+      genero: handle,
+      elementos: 50
     };
-    const res = await axios.post(`${urlBackend}/movies/latest-by-genre`, bodyParameters, headersConfig)
+
+    const res = await axios.post(`${urlBackend}/movies/movies-by-genre`, bodyParameters, headersConfig)
     if(res.status === 200){
       if(res.data.estado === 401){
         alert(res.data.mensaje);
@@ -35,39 +39,35 @@ const Home = () => {
         setPelis(res.data.movies)
       }
     }
-  }
+  } 
 
   useEffect(() => {
-    getPeli();
-  }, [])
+      getPeli();
+  }, [handle])
 
-  return(
+  return ( 
     <div className="d-flex flex-column min-vh-100">
       <header>
         <Navbar mostrarMenu={mostrarMenu} />
       </header>
       <main>
-        <section>
-        <div id="padre">
-          <img className="d-block img-fondo" src={pelis[0]?.fondo} alt={pelis[0]?.titulo} />
-          <div className="card-body">
-            <h5 className="card-title">{pelis[0]?.titulo}</h5>
-            <h2 className="card-subtitle">{pelis[0]?.genero}</h2>
-            <p className="card-text">{pelis[0]?.sinopsis}</p>
-          </div>
-        </div>
+        <section className="mt-3">
+          <CarruselHome pelis={pelis} />
         </section>
         <section>
-          {
-            GenresData.map(genero => pelis.filter(peli => peli.genero === genero.name).length >5 ? (<CarouselSlider pelis={pelis.filter(peli => peli.genero === genero.name)} key={genero.id} genero={genero.nombre} />) : (<br key={genero.id} />) )
-          }
+          <h2 className="titulo-home text-center m-2 text-white">{handle}</h2>
+          <ul className="grilla">
+            {
+              pelis.map(peli => <PelisGrilla peli={peli} key={peli._id} id={peli._id} handle={handle} /> )
+            }
+          </ul>
         </section>
       </main>
       <footer >
         <Footer />
       </footer> 
     </div>
-  )
-} 
+  );
+}
 
-export default Home;
+export default MoviesByGenre;

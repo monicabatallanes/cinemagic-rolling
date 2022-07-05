@@ -5,7 +5,7 @@ const MovieListPanel = (props) => {
 
   return ( 
     <>
-      <h2 className="fw-bold text-center pt-2 mb-4 ">Listado de Peliculas</h2>
+      <h2 className="fw-bold text-center pt-2 mb-4 mt-4">Listado de Peliculas</h2>
       <div className="mb-5 ">
         <table className="table table-default table-hover">
           <thead>

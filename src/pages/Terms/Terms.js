@@ -1,8 +1,8 @@
 const Terms = () => {
   return ( 
-    <div className="container  w-75 mt-5 border-0">
+    <div className="container  w-100 mt-5 border-0">
       <div className="row align-items-stretch">
-        <div className="col p-5 caja-login">
+        <div className="col-12 p-5 caja-login">
           <h1>Términos de uso</h1>
           <p>¡Le damos la bienvenida a CineMagic! Esperamos que disfrute de nuestra plataforma, que le ofrece funciones de personalización únicas y una gran variedad de contenido de alta calidad para todos los miembros de la familia y que incluye también todos los servicios de CineMagic, junto con una colección incluso mayor de películas, programas y nuevas producciones de Max Originals.</p>
           <p>EN PRIMER LUGAR, UN MENSAJE IMPORTANTE: LEA DETENIDAMENTE LAS PRESENTES CONDICIONES GENERALES (“Condiciones” o “Términos de uso” o “Acuerdo”) YA QUE AFECTAN A SUS DERECHOS Y OBLIGACIONES LEGALES AL INCLUIR, ENTRE OTROS, RENUNCIAS DE DERECHOS, LIMITACIONES DE RESPONSABILIDAD Y SU OBLIGACIÓN DE INDEMNIZARNOS EN DETERMINADOS CASOS. TENGA EN CUENTA QUE, EN LA MEDIDA EN LA QUE ASÍ LO PERMITA LA LEY APLICABLE, ESTAS CONDICIONES PREVÉN EL ARBITRAJE INTER PARTES COMO MECANISMO PARA LA RESOLUCIÓN DE CONFLICTOS EN LUGAR DE LA VÍA JUDICIAL O DE LA POSIBILIDAD DE INSTAR UN JUICIO CON JURADO Y LIMITAN LAS ACCIONES DISPONIBLES EN CASO DE CONTROVERSIA.</p>

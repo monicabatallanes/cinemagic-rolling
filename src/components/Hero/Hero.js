@@ -14,8 +14,6 @@ const Hero = () => {
   const getLastMovie = async() => {
     const resp = await fetch(`${urlBackend}/movies/last`)
     const json = await resp.json()
-    console.log('last movie: ', json.movie)
-    console.log('last movie titulo: ', json.movie[0].titulo)
     setLastMovie(json.movie[0]);
   }
 
@@ -26,7 +24,7 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="fondo-blur">
-        <img className="d-block w-100" src={lastMovie.fondo}  />
+        <img className="d-block w-100" src={lastMovie.fondo} alt={lastMovie.titulo}  />
       </div>
       <div className="contenedor">
         <div className="contenedorIcons">
@@ -53,13 +51,12 @@ const Hero = () => {
           <p>X EL PRECIO DE 1</p>
         </div>
         <div className="contenedor-boton">
-          <button className="boton-login">
-            <NavLink to="/register" className="boton-login">
+          <button className="boton-hero">
+            <NavLink to="/register" className="boton-hero">
               APROVECHA AHORA
             </NavLink>
           </button>
         </div>
-        {/* <hr /> */}
       </div>
     </div>
   );

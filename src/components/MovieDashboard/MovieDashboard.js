@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../MovieDashboard/movieDashboard.css"
 import iconSearch from '../../assets/images/search.svg';
 import iconClose from '../../assets/images/close.svg';
+import GenresData from "../../Genres.json";
 
 const MovieDashboard = (props) => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -118,13 +119,16 @@ const MovieDashboard = (props) => {
   const loadSelectedMovie = async (data) => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${data}?api_key=4d364ad85512cc46ece523adfe038aba&language=en-US`)
     const resultJson = await response.json()
-
+    console.log('datos para autorellenar: ', resultJson)
+    console.log('genero para autorellenar: ', resultJson.genres[0].name)
     let defaultValues = {};
     defaultValues.titulo = resultJson.original_title;
     defaultValues.sinopsis = resultJson.overview;
     defaultValues.lanzamiento = resultJson.release_date;
     defaultValues.poster = urlImagenes + resultJson.poster_path;
     defaultValues.fondo = urlImagenes + resultJson.backdrop_path;
+    defaultValues.trailer = "";
+    defaultValues.genero = resultJson.genres[0].name;
     reset({ ...defaultValues });
   }
 
@@ -147,7 +151,6 @@ const MovieDashboard = (props) => {
     setText(text);
     setId(id);
     setSuggestions([]);
-    
   };
 
   const clearInput = () => {
@@ -163,17 +166,19 @@ const MovieDashboard = (props) => {
   };
 
   return ( 
-    <>
+
+    <div className="container w-75 mt-4 border-0">
       {
         agregar? (
-          <div className="container search">
-            <div className="searchInputs">
+          <div className='row justify-content-center'>
+          <div className="container search   col ">
+            <div className="searchInputs ">
               <input
                 type="text"
                 className="form-control entrada-login" 
                 onChange={(e) => onChangeHandler(e.target.value)}
                 value={text}
-                placeholder="Ingrese el nombre de la pelicula"
+                placeholder="Buscar pelicula"
                 onBlur={() => {
                   setTimeout(() => {
                     setSuggestions([]);
@@ -203,12 +208,13 @@ const MovieDashboard = (props) => {
                 </div>
               ))}
           </div>
+          </div>
         ) : (
           <br></br>
         )
       }
-      
-      <div className="col p-5 caja-login mt-5">
+      <div className='row justify-content-center'>
+      <div className="col p-5 caja-login mt-2 ">
         <h2 className="fw-bold text-center pt-2 mb-4 ">{titulo}</h2>
         <form className="row" onSubmit={handleSubmit(onSubmit)}>
           <div className="has-validation mb-4">
@@ -303,18 +309,28 @@ const MovieDashboard = (props) => {
               id="genero" 
               defaultValue={agregar? "" : objeto.genero} 
               {...register("genero")}>
-              <option value="accion">Acci&oacute;n</option>
-              <option value="aventura">Aventura</option>
-              <option value="ciencia-ficcion">Ciencia Ficci&oacute;n</option>
-              <option value="comedia">Comedia</option>
-              <option value="documental">Documental</option>
-              <option value="drama">Drama</option>
-              <option value="fantasia">Fantas&iacute;a</option>
-              <option value="musical">Musical</option>
-              <option value="suspenso">Suspenso</option>
-              <option value="terror">Terror</option>
-              <option value="otro">other</option>
+              {
+                GenresData.map(genero => <option value={genero.name} key={genero.id}>{genero.nombre}</option>)
+              }
             </select>
+          </div>
+          <div className="has-validation mb-4">
+            <input 
+              type="url" 
+              name="trailer" 
+              className="form-control entrada-login" 
+              id="trailer" 
+              placeholder="Enlace del trailer" 
+              defaultValue={agregar? "" : objeto.trailer}
+              {...register("trailer", {
+                required: " Ingresa el enlace del trailer.",
+                minLength: {
+                  value: 2,
+                  message: "El mínimo requerido de caracteres es 2."
+                }
+              })}
+            />
+            {errors.trailer && <p className="error-icon">{errors.trailer.message}</p>}
           </div>
           <div className="d-grid gap-2 col-6 col-xs-6 6 mx-auto mb-3">
             { agregar? (
@@ -336,7 +352,9 @@ const MovieDashboard = (props) => {
           </button>
         </div>
       </div>
-    </>
+      </div>  
+    </div>
+
   );
 }
 

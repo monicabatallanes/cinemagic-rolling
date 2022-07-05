@@ -4,58 +4,73 @@ import "./detail.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import {useLocation} from 'react-router-dom';
+import ReactPlayer from "react-player";
+import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 const Detail = () => {
-
   const [detalle, setDetalle ] = useState([]) 
+  const [handle, setHandle ] = useState("") 
+  const location = useLocation();
+  let navigate = useNavigate();
+
   const getDetail = () => {
-      const detailMovie= localStorage.getItem("infoMovie")
-      const objDetail= JSON.parse(detailMovie)
-      setDetalle(objDetail)
-      
+    const objDetail = location.state.peli;
+    setDetalle(objDetail)
+    setHandle(location.state.handle)
   }
-  console.log(detalle)
+
   useEffect(() => {
       getDetail();
-  }, [detalle.id])
-  
-
+  }, [])
 
   return (
-      <div class="d-flex flex-column min-vh-100"> 
+    <div className="d-flex flex-column min-vh-100"> 
       <header>
-          <Navbar/>
+        <Navbar/>
       </header>
-      <section className="detail-container">
+      <main>
+        <section className="detail-container ">
           <div className="col d-flex justify-content-center">
-              <img className="movie-image" src={detalle.image} alt={detalle.title} />
+            <img className="movie-image" src={detalle.poster} alt={detalle.titulo} />
           </div>
           <div className="col">
-              <p className="titulo-detail">{detalle.title}</p>
-              <p className="resumen text-white"><strong>Resumen: </strong>{detalle.plot} </p>
-              <p className="text-white"><strong>Género: </strong>{detalle.genres}</p>
-              <p className="text-white"><strong>Actores: </strong>{detalle.stars}</p>
-              <p className="text-white"><strong>Directores: </strong>{detalle.directors}</p>
+            <p className="titulo-detail">{detalle.titulo}</p>
+            <p className="resumen text-white"><strong>Resumen: </strong>{detalle.sinopsis} </p>
+            <p className="text-white"><strong>Género: </strong>{detalle.genero}</p>
+            <div className="slider-video">
+              <ReactPlayer
+                className="slider-video"
+                url={detalle.trailer}
+                width="100%"
+                height="100%"
+              />
+            </div>
           </div>
-      </section>
-
-      <section className="d-none d-md-block">
-            <p className="titulo-detail d-flex justify-content-center">Reparto de la película</p>
-                <div className="grilla mt-3">
-                  {
-                    detalle.actorList?.map((actor) => <div ><img className="img-grid" src={actor.image} alt={actor.id}/> <p className='text-center mt-1 mb-2'>{actor.name} </p></div>)
-                  }
-                </div>
-      </section>
-       <section>
-         <div className="d-flex justify-content-center m-4">
-            <Link to={"/home"}>
+        </section>
+        <section>
+          <div className="d-flex justify-content-center m-4">
+            {/* <Link to={"/home"}>
             <Button variant="outline-danger ">Volver</Button>
-            </Link>
-         </div>
-       </section>  
-      </div>
-      
+            </Link> */}
+            {
+              handle? 
+                (
+                  <Button className="boton-hero"  onClick={() => navigate('/movies-by-genre'+handle)}>Volver a {handle}</Button>
+                ):(
+                  <Link to={"/home"}>
+                    <Button className="boton-hero" >Volver</Button>
+                  </Link>
+                )
+            }
+          </div>
+        </section>
+      </main>
+      <footer >
+        <Footer />
+      </footer> 
+    </div>
   );
 };
 

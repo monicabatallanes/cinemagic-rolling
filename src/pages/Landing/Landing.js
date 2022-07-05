@@ -1,10 +1,10 @@
-import Carrusel from "../../components/Carrusel/Carrusel";
 import DispositivosAdaptables from "../../components/DispositivosAdaptables/DispositivosAdaptables";
 import Hero from "../../components/Hero/Hero";
 import MenuNavegacion from "../../components/MenuNavegacion/MenuNavegacion";
 import PlanMarketing from "../../components/PlanMarketing/PlanMarketing";
 import Separador from "../../components/Separador/Separador";
 import Slider from "../../components/Slider/Slider";
+import Footer from "../../components/Footer/Footer";
 
 const Landing = () => {
   return (
@@ -18,7 +18,6 @@ const Landing = () => {
           <Separador />
         </section>
         <section>
-          {/* <Carrusel /> */}
           <PlanMarketing />
           <Separador />
         </section>
@@ -43,6 +42,11 @@ const Landing = () => {
           <DispositivosAdaptables />
         </section>
       </main>
+
+      <footer >
+        <Footer />
+      </footer> 
+
     </div>
   );
 }

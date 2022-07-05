@@ -4,33 +4,19 @@
 }
 
 .carrusel-contenedor {
-  width: 550px;
-  height: 350px;  
+  width: 100%;
+  height: auto; 
   margin-left: auto;
   margin-right: auto;
 }
 
 .carruselItem {
-  width: 550px;  
-  height: 350px;  
+  width: 100%;  
+  height: auto;  
 }
 
 .img-carrusel {
   width: 100%;
   height: 80%;
   border-radius: 15px;
-}
-
-@media screen and (max-width: 376px) {
-  .carrusel-contenedor {
-    width: 350px;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .carruselItem {
-    width: 350px;
-    height: 200px;
-  }
 }

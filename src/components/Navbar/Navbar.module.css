@@ -101,7 +101,31 @@ hr {
   font-size: 16px;
 }
 
+@media screen and (max-width: 776px) {
+  .botonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .botonNav {
+    margin-top: 5px;
+  }
+
+  .titleNabvar {
+    width: auto;
+    height: 20px;
+  }
+}
+
 @media screen and (max-width: 376px) {
+  
+  .titleNabvar {
+    width: 140px;
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+
   .botonNav {
       font-size: 12px;
       padding: 4px;

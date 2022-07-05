@@ -1,7 +1,7 @@
 :root{
   --color-principal: #03045e;
-  --color-secundario: #023e8a;
-  --color-terciario: #00b4d8;
+  --color-secundario: #230D4A;
+  --color-terciario: #420d4a;
   --color-logo:  #bf1650;
   --color-letra: #ffffff;
   --color-boton: #ec5990;;
@@ -43,6 +43,8 @@ body{
   background: var(--color-terciario);
   border: none;
   border-radius: 6px;
+  
+  color: white;
 }
 .entrada-login:focus{
   border-color: #000000;
@@ -122,12 +124,12 @@ body{
 
 .fila-datos > td, th{
   color: white !important;
-  background-color: var(--color-secundario);
+  background-color: var(--color-terciario);
 }
 .fila-datos > td, th:hover{
   color: white !important;
 }
 
 .fila-encabezado > th{
-  background-color: var(--color-principal);
+  background-color: var(--color-secundario);
 }

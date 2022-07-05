@@ -7,7 +7,7 @@ import Register from "./pages/Register/Register";
 import Terms from "./pages/Terms/Terms";
 import Error from "./pages/Error/Error";
 import Admin from "./pages/Admin/Admin";
-import Footer from "./components/Footer/Footer";
+import MoviesByGenre from "./pages/MoviesByGenre/MoviesByGenre";
 
 
 const App = () => {
@@ -19,13 +19,11 @@ const App = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/terms' element={<Terms />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/movies-by-genre:handle' element={<MoviesByGenre />} />
         <Route path='/detail' element={<Detail />} />
         <Route path='/*' element={<Error />} />
         <Route path='/admin' element={<Admin />} />
       </Routes>
-      <footer className="mt-auto">
-        <Footer />
-      </footer>
     </>
   );
 }

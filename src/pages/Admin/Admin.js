@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+// import { Navbar } from "react-bootstrap";
 import MovieDashboard from "../../components/MovieDashboard/MovieDashboard";
 import MovieListPanel from "../../components/MovieListPanel/MovieListPanel";
+import Navbar from "../../components/Navbar/Navbar";
 import "./admin.css"
-
+import Footer from "../../components/Footer/Footer";
 
 const Admin = () => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -12,14 +14,31 @@ const Admin = () => {
   const [peliculasRegistradas, setPeliculasRegistradas] = useState([]);
 
   const getPeliculasRegistradas = async() => {
-    const resp = await fetch(`${urlBackend}/movies/list`)
+    // const resp = await fetch(`${urlBackend}/movies/list`)
+    const userJson = localStorage.getItem('cinemagicUser');
+    let data;
+    if(userJson !== null){
+      const userObj = JSON.parse(userJson); 
+      // data.accessToken = userObj.token;
+      data = {
+        accessToken : userObj.token
+      }
+    }
+    const resp = await fetch(`${urlBackend}/movies/list`, {
+      method:'POST',
+      body: JSON.stringify(data),
+      headers:{
+        "Content-Type": "application/json"
+      }
+    })
     const json = await resp.json()
     setPeliculasRegistradas(json.movies);
   }
-  const logOut = () => {
-    localStorage.clear();
-    window.location.href="/login";
-  }
+
+  // const logOut = () => {
+  //   localStorage.clear();
+  //   window.location.href="/login";
+  // }
 
   useEffect( () => {
     getPeliculasRegistradas();
@@ -33,54 +52,63 @@ const Admin = () => {
     getPeliculasRegistradas();
   },[isEditing])
 
+  const mostrarMenu=false;
+
   return ( 
     <div className="d-flex flex-column min-vh-100">
-      <button type="button" className="btn-close boton-cerrar" aria-label="Close" onClick={() => logOut()} ></button>
-      <div className="container text-light">
-        <h1 className="d-inline mr-2">Bienvenido Administrador</h1>
-        
-        <div className="mb-1">
-          {
-            isAdding? (
-              <button 
-                className="btn boton-login" 
-                onClick={() => setIsAdding(false)}
-              >
-                Volver
-              </button>
-            ) : (
-              <div>
+      <header>
+        <Navbar mostrarMenu={mostrarMenu} />
+      </header>
+      <main>
+        <section>
+          <div className="container text-light">
+            <h1 className="d-inline mr-2 d-flex justify-content-center">Bienvenido Administrador</h1>
+            <div className="mb-1 d-flex justify-content-center">
               {
-                isEditing? (
+                isAdding? (
                   <button 
-                    className="btn boton-login"
-                    onClick={() => setIsEditing(false)}
+                    className="btn boton-login" 
+                    onClick={() => setIsAdding(false)}
                   >
                     Volver
                   </button>
-                ):(
-                  <button 
-                    className="btn boton-login"
-                    onClick={() => setIsAdding(true)}
-                  >
-                    Agregar
-                  </button>
+                ) : (
+                  <div>
+                  {
+                    isEditing? (
+                      <button 
+                        className="btn boton-login"
+                        onClick={() => setIsEditing(false)}
+                      >
+                        Volver
+                      </button>
+                    ):(
+                      <button 
+                        className="btn boton-login"
+                        onClick={() => setIsAdding(true)}
+                      >
+                        Agregar
+                      </button>
+                    )
+                  }
+                  </div>
                 )
               }
-              </div>
-            )
-          }
-        </div>
+            </div>
+            {
+              (!isAdding && !isEditing)? (
+                <MovieListPanel peliculas={peliculasRegistradas} cambiaEstadoEditar={setIsEditing} cambiaEstadoObjeto={setdataObj} />
+              ):(
+                <MovieDashboard editar={isEditing}  agregar={isAdding} objeto={dataObj} cambiaEstadoEditar={setIsEditing} cambiaEstadoAgregar={setIsAdding}  />
+              )
+            }
+          </div>
+        </section>
+      </main>
+      <footer >
+        <Footer />
+      </footer> 
 
-        {
-          (!isAdding && !isEditing)? (
-            <MovieListPanel peliculas={peliculasRegistradas} cambiaEstadoEditar={setIsEditing} cambiaEstadoObjeto={setdataObj} />
-          ):(
-            <MovieDashboard editar={isEditing}  agregar={isAdding} objeto={dataObj} cambiaEstadoEditar={setIsEditing} cambiaEstadoAgregar={setIsAdding}  />
-          )
-        }
-
-      </div>
     </div>
   );
 }

@@ -13,7 +13,7 @@
 }
 
 .movie-image{
-  width: 400px;
+  width: 300px;
   height: auto;
   border-radius: 15px;
 }
@@ -30,20 +30,8 @@
 
 @media (max-width: 560px){
   .titulo-detail{
-    padding: 10px;
-    text-align: center;
+      padding: 10px;
+      text-align: center;
   }
-}
-
-.slider-video {
-  width: 500px;
-  height: 350px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media screen and (max-width: 800px) {
-  .slider-video {
-    width: 100%;
-  }
+  
 }

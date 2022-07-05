@@ -1,30 +1,22 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./carruselHome.css";
-import carrusel1 from "../../assets/images/carrusel1.png";
-import carrusel3 from "../../assets/images/carrusel2.jpg";
-import carrusel5 from "../../assets/images/carrusel3.jpg";
-import carrusel7 from "../../assets/images/carrusel4.jpg";
 
-const CarruselHome = ({ imagen, id}) => {
-    return (
-        <div>
-            <Carousel className="carrusel-contenedor">
-          <Carousel.Item className="carruselItem">
-            <img className="img-carrusel" src={carrusel1} alt={id} />
+const CarruselHome = ({pelis, id}) => {
+  console.log('pelis en carrousel: ', pelis);
+  return (
+    <div>
+      <Carousel className="carrusel-contenedor">
+      {
+        pelis?.map( peli => 
+          <Carousel.Item className="carruselItem" key={peli._id} id={peli._id}>
+            <img className="img-carrusel" src={peli.fondo} alt={peli.titulo} />
           </Carousel.Item>
-          <Carousel.Item className="carruselItem">
-            <img className="img-carrusel" src={carrusel3} alt={id} />
-          </Carousel.Item>
-          <Carousel.Item className="carruselItem">
-            <img className="img-carrusel" src={carrusel5} alt={id} />
-          </Carousel.Item>
-          <Carousel.Item className="carruselItem">
-            <img className="img-carrusel" src={carrusel7} alt={id} />
-          </Carousel.Item>
-        </Carousel>
-        </div>
-    );
+        )
+      }
+      </Carousel>
+    </div>
+  );
 };
 
 export default CarruselHome;

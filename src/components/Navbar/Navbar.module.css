@@ -13,23 +13,24 @@
   .botonNav {
     margin-top: 5px;
   }
-  .titleNabvar {
-    width: auto;
-    height: 20px;
-  }
 }
 
 @media screen and (max-width: 376px) {
-  .titleNabvar {
+  /* .titleNabvar {
     width: 140px;
+  } */
+  
+  .titleNabvar {
+    width: auto;
+    height: 30px !important;
   }
-} 
+}
 
 @media screen and (min-width: 778px) {
   .botonNav {
     margin-right: auto;
   }
-}  
+}
 
 .titleNabvar {
   height: 40px;
@@ -58,11 +59,11 @@
 }
 
 li {
-  margin-top: 15px;     
+  margin-top: 15px;
 }
 
 hr {
-  margin-top: 30px;        
+  margin-top: 30px;
 }
 
 .navItem {
@@ -102,7 +103,7 @@ hr {
 
 @media screen and (max-width: 376px) {
   .botonNav {
-      font-size: 14px;
+      font-size: 12px;
       padding: 4px;
       margin-right: auto;
   }

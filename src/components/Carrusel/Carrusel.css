@@ -4,15 +4,15 @@
 }
 
 .carrusel-contenedor {
-  width: 550px;
-  height: 350px;  
+  width: 100%;
+  height: auto; 
   margin-left: auto;
   margin-right: auto;
 }
 
 .carruselItem {
-  width: 550px;  
-  height: 350px;  
+  width: 100%;  
+  height: auto;  
 }
 
 .img-carrusel {
@@ -20,4 +20,3 @@
   height: 80%;
   border-radius: 15px;
 }
-

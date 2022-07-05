@@ -43,7 +43,7 @@ const Landing = () => {
         </section>
       </main>
 
-      <footer >
+      <footer className="mt-auto">
         <Footer />
       </footer> 
 

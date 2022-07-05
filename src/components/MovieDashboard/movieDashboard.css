@@ -1,6 +1,5 @@
 .searchInputs {
   display: flex;
-
 }
 
 .search{
@@ -9,12 +8,10 @@
 
 .search input {
   height: 30px;
-  /* width: 50%; */
   width: 100%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin-left: 5px;
-
 }
 
 .search input:focus {
@@ -44,14 +41,10 @@
 
 .suggestions{
   margin-left: 10px;
-
-  /* width: 50%; */
   width: 90%;
   height: 25px;
   display: flex;
-
   background-color: #7e3e88;
-  
 }
 
 .suggestions:hover {

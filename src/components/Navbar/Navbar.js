@@ -61,80 +61,21 @@ const Navbar = ({mostrarMenu}) => {
             </div>
             <div className={style.listado}>
               <div className="offcanvas-body">
-                {/* <div className={style.buscadorContainer}>
-                  <form>
-                    <input
-                      className={style.buscadorNavbar}
-                      type="search"
-                      placeholder="¿Que está buscando?"
-                    />
-                    <button className="btn btn-outline-primary" type="submit">
-                      Buscar
-                    </button>
-                  </form>
-                </div> */}
                 <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li>
                     <NavLink to="/home" className={style.navItem}>
                       Películas
                     </NavLink>
                   </li>
-                  {/* <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Recién añadidos
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Próximamente
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      En tendencia
-                    </NavLink>
-                  </li> */}
                   <hr />
                   {
                     GenresData.map(genero => <NavLink to={"/movies-by-genre"+genero.name} className={style.navItem} key={genero.id}>{genero.nombre}</NavLink>)
                   }
-
-                  {/* <li>
-                    <NavLink to="/movies-by-genre:accion" className={style.navItem}>
-                      Acción
-                    </NavLink>
-                  </li> */}
                   <li>
                     <NavLink to="/movies-by-rolling-code:programar" className={style.navItem}>
                       RollingCode
                     </NavLink>
                   </li>
-
-                  {/* <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Comedia
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Drama
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Fantasía y Ciencia Ficción
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Terror y Suspenso
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login" className={style.navItem}>
-                      Infantil y Familiar
-                    </NavLink>
-                  </li> */}
                 </ul>
               </div>
             </div>

@@ -11,7 +11,6 @@ const Home = () => {
   const urlBackend = process.env.REACT_APP_URL; 
   const [ pelis, setPelis] = useState([])
   const mostrarMenu=true;
-
   const getPeli = async() => {
     const userJson = localStorage.getItem('cinemagicUser');
     let token;
@@ -59,11 +58,11 @@ const Home = () => {
         </section>
         <section>
           {
-            GenresData.map(genero => pelis.filter(peli => peli.genero === genero.name).length >5 ? (<CarouselSlider pelis={pelis.filter(peli => peli.genero === genero.name)} key={genero.id} genero={genero.nombre} />) : (<br key={genero.id} />) )
+            GenresData.map(genero => pelis?.filter(peli => peli.genero === genero.name).length >5 ? (<CarouselSlider pelis={pelis.filter(peli => peli.genero === genero.name)} key={genero.id} genero={genero.nombre} />) : (<br key={genero.id} />) )
           }
         </section>
       </main>
-      <footer >
+      <footer className="mt-auto">
         <Footer />
       </footer> 
     </div>

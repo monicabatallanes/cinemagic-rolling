@@ -23,7 +23,7 @@ const Login = () => {
           </div>
         </section>
       </main>
-      <footer >
+      <footer className="mt-auto">
         <Footer />
       </footer> 
     </div>

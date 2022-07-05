@@ -51,9 +51,6 @@ const Detail = () => {
         </section>
         <section>
           <div className="d-flex justify-content-center m-4">
-            {/* <Link to={"/home"}>
-            <Button variant="outline-danger ">Volver</Button>
-            </Link> */}
             {
               handle? 
                 (
@@ -67,7 +64,7 @@ const Detail = () => {
           </div>
         </section>
       </main>
-      <footer >
+      <footer className="mt-auto">
         <Footer />
       </footer> 
     </div>

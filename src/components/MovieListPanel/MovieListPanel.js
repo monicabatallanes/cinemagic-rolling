@@ -19,7 +19,7 @@ const MovieListPanel = (props) => {
           </thead>
           <tbody>
             {
-              peliculas.map( (list, i) => (
+              peliculas?.map( (list, i) => (
                 <tr key={i} className="fila-datos">
                   <th scope="row" >{i + 1}</th>
                   <td >{list.titulo}</td>

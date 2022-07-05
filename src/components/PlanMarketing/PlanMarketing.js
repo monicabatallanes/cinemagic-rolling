@@ -32,9 +32,6 @@ const PlanMarketing = () => {
           <img src={looney} alt="looney-toons" className="img" />
         </div>
       </div>
-{/* <div className="separador">
-  <hr/>
-</div> */}
     </div>    
   );
 };

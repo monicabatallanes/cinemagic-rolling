@@ -16,10 +16,6 @@
 }
 
 @media screen and (max-width: 376px) {
-  /* .titleNabvar {
-    width: 140px;
-  } */
-  
   .titleNabvar {
     width: auto;
     height: 30px !important;
@@ -119,7 +115,6 @@ hr {
 }
 
 @media screen and (max-width: 376px) {
-  
   .titleNabvar {
     width: 140px;
     margin-left: 50px;

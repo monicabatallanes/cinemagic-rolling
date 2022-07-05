@@ -80,8 +80,6 @@ const MovieDashboard = (props) => {
       if (!confirm) {
         return;
       }
-      // const uid= objeto._id;
-      // const resp = await fetch(`${urlBackend}/movies/delete/${uid}`)
       const resp = await fetch(`${urlBackend}/movies/delete`, {
         method:'DELETE',
         body: JSON.stringify(data),
@@ -119,8 +117,6 @@ const MovieDashboard = (props) => {
   const loadSelectedMovie = async (data) => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${data}?api_key=4d364ad85512cc46ece523adfe038aba&language=en-US`)
     const resultJson = await response.json()
-    console.log('datos para autorellenar: ', resultJson)
-    console.log('genero para autorellenar: ', resultJson.genres[0].name)
     let defaultValues = {};
     defaultValues.titulo = resultJson.original_title;
     defaultValues.sinopsis = resultJson.overview;
@@ -135,9 +131,7 @@ const MovieDashboard = (props) => {
   const onChangeHandler = (text) => {
     let matches = [];
     if (text.length > 3) {
-      // busco el texto en la api de busqueda
       loadMovies(text);
-      // filtro
       matches = movies.filter((peli) => {
         const regex = new RegExp(`${text}`, "gi");
         return peli.original_title.match(regex);
@@ -160,7 +154,6 @@ const MovieDashboard = (props) => {
 
   const fillFields = () => {
     if (text.length > 3) {
-      // busco el texto en la api de detalles 
       loadSelectedMovie(id);
     }
   };

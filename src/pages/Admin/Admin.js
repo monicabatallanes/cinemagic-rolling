@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { Navbar } from "react-bootstrap";
 import MovieDashboard from "../../components/MovieDashboard/MovieDashboard";
 import MovieListPanel from "../../components/MovieListPanel/MovieListPanel";
 import Navbar from "../../components/Navbar/Navbar";
@@ -14,12 +13,10 @@ const Admin = () => {
   const [peliculasRegistradas, setPeliculasRegistradas] = useState([]);
 
   const getPeliculasRegistradas = async() => {
-    // const resp = await fetch(`${urlBackend}/movies/list`)
     const userJson = localStorage.getItem('cinemagicUser');
     let data;
     if(userJson !== null){
       const userObj = JSON.parse(userJson); 
-      // data.accessToken = userObj.token;
       data = {
         accessToken : userObj.token
       }
@@ -34,11 +31,6 @@ const Admin = () => {
     const json = await resp.json()
     setPeliculasRegistradas(json.movies);
   }
-
-  // const logOut = () => {
-  //   localStorage.clear();
-  //   window.location.href="/login";
-  // }
 
   useEffect( () => {
     getPeliculasRegistradas();
@@ -105,7 +97,7 @@ const Admin = () => {
           </div>
         </section>
       </main>
-      <footer >
+      <footer className="mt-auto">
         <Footer />
       </footer> 
 

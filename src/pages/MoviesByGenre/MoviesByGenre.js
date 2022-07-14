@@ -43,6 +43,7 @@ const MoviesByGenre = () => {
 
   useEffect(() => {
       getPeli();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handle])
 
   return ( 

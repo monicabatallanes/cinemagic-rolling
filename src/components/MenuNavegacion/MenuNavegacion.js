@@ -9,7 +9,7 @@ const MenuNavegacion = ({ imageSrc }) => {
     <nav className="navbar navbar-expand-sm justify-content-between navbar-dark fixed-top">
       <div className="menu-header">
         <a className="navbar-brand" href="/">
-          <img src={Logo} className={style.titleNabvar} />
+          <img src={Logo} className={style.titleNabvar} alt="logo" />
         </a>
       </div>
       <div className="justify-content-end d-flex  d-sm-none">

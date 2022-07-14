@@ -10,7 +10,7 @@ const MoviesSlider = ({peli}) => {
   
   return ( 
     <div>
-      <a onClick={()=>{toDetail()}}>
+      <a onClick={()=>{toDetail()}} href={()=> false}>
         <div className="pelis-slider card-box1">
           <img className="img-slider " src={peli.fondo} alt={peli.titulo}/>
           <div className="card-img-overlay">

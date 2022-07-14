@@ -38,6 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     getPeli();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return(
@@ -47,18 +48,8 @@ const Home = () => {
       </header>
       <main>
         <section>
-        <div id="padre">
-          <img className="d-block img-fondo" src={pelis[0]?.fondo} alt={pelis[0]?.titulo} />
-          <div className="card-body">
-            <h5 className="card-title">{pelis[0]?.titulo}</h5>
-            <h2 className="card-subtitle">{pelis[0]?.genero}</h2>
-            <p className="card-text">{pelis[0]?.sinopsis}</p>
-          </div>
-        </div>
-        </section>
-        <section>
           {
-            GenresData.map(genero => pelis?.filter(peli => peli.genero === genero.name).length >5 ? (<CarouselSlider pelis={pelis.filter(peli => peli.genero === genero.name)} key={genero.id} genero={genero.nombre} />) : (<br key={genero.id} />) )
+            GenresData.map(genero => pelis?.filter(peli => peli.genero === genero.name).length >1 ? (<CarouselSlider pelis={pelis.filter(peli => peli.genero === genero.name)} key={genero.id} genero={genero.nombre} />) : (<br key={genero.id} />) )
           }
         </section>
       </main>

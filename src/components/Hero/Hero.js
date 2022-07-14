@@ -19,6 +19,7 @@ const Hero = () => {
 
   useEffect( () => {
     getLastMovie();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

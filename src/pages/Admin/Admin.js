@@ -34,14 +34,17 @@ const Admin = () => {
 
   useEffect( () => {
     getPeliculasRegistradas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     getPeliculasRegistradas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isAdding])
   
   useEffect(() => {
     getPeliculasRegistradas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isEditing])
 
   const mostrarMenu=false;

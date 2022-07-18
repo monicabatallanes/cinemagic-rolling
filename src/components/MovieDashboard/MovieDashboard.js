@@ -4,6 +4,7 @@ import "../MovieDashboard/movieDashboard.css"
 import iconSearch from '../../assets/images/search.svg';
 import iconClose from '../../assets/images/close.svg';
 import GenresData from "../../Genres.json";
+import Swal from 'sweetalert2';
 
 const MovieDashboard = (props) => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -30,7 +31,13 @@ const MovieDashboard = (props) => {
         })
         const json = await resp.json()
         if(resp.ok){
-          alert(json.mensaje);
+          /*alert(json.mensaje);*/
+          Swal.fire({
+            title: "Informacón",
+            text: json.mensage,
+            icon: "success",
+            timer: "3000"
+          });
           if(json.estado === 401){
             localStorage.clear();
             window.location.href="/login";
@@ -50,7 +57,13 @@ const MovieDashboard = (props) => {
           })
           const json = await resp.json()
           if(resp.ok){
-            alert(json.mensaje);
+            /*alert(json.mensaje);*/
+            Swal.fire({
+              title: "Informacón",
+              text: json.mensage,
+              icon: "success",
+              timer: "3000",
+            });
             if(json.estado === 401){
               localStorage.clear();
               window.location.href="/login";
@@ -89,7 +102,13 @@ const MovieDashboard = (props) => {
       })
       const json = await resp.json()
       if(resp.ok){
-        alert(json.mensaje);
+        /*alert(json.mensaje);*/
+        Swal.fire({
+          title: "Informacón",
+          text: json.mensage,
+          icon: "success",
+          timer: "3000",
+        });
         if(json.estado === 401){
           localStorage.clear();
           window.location.href="/login";

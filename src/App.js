@@ -8,9 +8,19 @@ import Terms from "./pages/Terms/Terms";
 import Error from "./pages/Error/Error";
 import Admin from "./pages/Admin/Admin";
 import MoviesByGenre from "./pages/MoviesByGenre/MoviesByGenre";
-
+import { useState, useEffect } from "react";
 
 const App = () => {
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const userJson = localStorage.getItem('cinemagicUser');
+    if(userJson !== null){
+      const userObj = JSON.parse(userJson); 
+      setToken(userObj.token);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <>
       <Routes>
@@ -18,11 +28,11 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/terms' element={<Terms />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/movies-by-genre:handle' element={<MoviesByGenre />} />
-        <Route path='/detail' element={<Detail />} />
+        <Route path='/home' element={ token? <Home  /> : <Login /> } />
+        <Route path='/movies-by-genre:handle' element={ token?<MoviesByGenre /> : <Login /> } />
+        <Route path='/detail' element={token? <Detail /> : <Login /> } />
         <Route path='/*' element={<Error />} />
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={token? <Admin /> : <Login /> } />
       </Routes>
     </>
   );

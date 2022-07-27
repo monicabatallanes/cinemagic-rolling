@@ -7,6 +7,7 @@ import "./moviesByGenre.css"
 import CarruselHome from "../../components/CarruselHome/CarruselHome";
 import Footer from "../../components/Footer/Footer";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MoviesByGenre = () => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -32,9 +33,16 @@ const MoviesByGenre = () => {
     const res = await axios.post(`${urlBackend}/movies/movies-by-genre`, bodyParameters, headersConfig)
     if(res.status === 200){
       if(res.data.estado === 401){
-        alert(res.data.mensaje);
-        localStorage.clear();
-        window.location.href="/login";
+        Swal.fire({
+          title: 'CineMagic',
+          text: res.data.mensaje,
+          icon: "success",
+          showConfirmButton: false,
+          timer: 2000
+        }).then(function() {
+          localStorage.clear();
+          window.location.href="/login";
+        })
       } else {
         setPelis(res.data.movies)
       }

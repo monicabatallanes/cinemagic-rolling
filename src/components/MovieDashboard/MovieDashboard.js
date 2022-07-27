@@ -31,19 +31,20 @@ const MovieDashboard = (props) => {
         })
         const json = await resp.json()
         if(resp.ok){
-          /*alert(json.mensaje);*/
           Swal.fire({
-            title: "Informacón",
-            text: json.mensage,
+            title: 'CineMagic',
+            text: json.mensaje,
             icon: "success",
-            timer: "3000"
-          });
-          if(json.estado === 401){
-            localStorage.clear();
-            window.location.href="/login";
-          } else {
-            cambiaEstadoAgregar(false);
-          }
+            showConfirmButton: false,
+            timer: 2000
+          }).then(function() {
+            if(json.estado === 401){
+              localStorage.clear();
+              window.location.href="/login";
+            } else {
+              cambiaEstadoAgregar(false);
+            }
+          })
         }
       } else {
         if(editar){
@@ -57,19 +58,20 @@ const MovieDashboard = (props) => {
           })
           const json = await resp.json()
           if(resp.ok){
-            /*alert(json.mensaje);*/
             Swal.fire({
-              title: "Informacón",
-              text: json.mensage,
+              title: 'CineMagic',
+              text: json.mensaje,
               icon: "success",
-              timer: "3000",
-            });
-            if(json.estado === 401){
-              localStorage.clear();
-              window.location.href="/login";
-            } else {
-              cambiaEstadoEditar(false);
-            }
+              showConfirmButton: false,
+              timer: 2000
+            }).then(function() {
+              if(json.estado === 401){
+                localStorage.clear();
+                window.location.href="/login";
+              } else {
+                cambiaEstadoEditar(false);
+              }
+            })
           }
         }
       }

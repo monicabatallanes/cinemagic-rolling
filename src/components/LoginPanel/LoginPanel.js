@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const LoginPanel = () => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -13,20 +14,27 @@ const LoginPanel = () => {
       }
     })
     const json = await resp.json()
-    alert(json.mensaje);
-    if(json.token){
-      const userObj = {
-        user: json.nombreUsuario,
-        token: json.token
+    Swal.fire({
+      title: 'CineMagic',
+      text: json.mensaje,
+      icon: "success",
+      showConfirmButton: false,
+      timer: 2000
+    }).then(function() {
+      if(json.token){
+        const userObj = {
+          user: json.nombreUsuario,
+          token: json.token
+        }
+        const userJson = JSON.stringify(userObj);
+        localStorage.setItem('cinemagicUser', userJson);
+        if(userObj.user === admUser){
+          window.location.href="/admin";
+        } else {
+          window.location.href="/home";
+        }
       }
-      const userJson = JSON.stringify(userObj);
-      localStorage.setItem('cinemagicUser', userJson);
-      if(userObj.user === admUser){
-        window.location.href="/admin";
-      } else {
-        window.location.href="/home";
-      }
-    }
+    })
   }
 
   return ( 

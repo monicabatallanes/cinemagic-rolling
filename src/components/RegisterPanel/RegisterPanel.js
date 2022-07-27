@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const RegisterPanel = () => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -12,10 +13,17 @@ const RegisterPanel = () => {
       }
     })
     const json = await resp.json()
-    alert(json.mensaje);
-    if(resp.ok){
-      window.location.href="/login"
-    }
+    Swal.fire({
+      title: 'CineMagic',
+      text: json.mensaje,
+      icon: "success",
+      showConfirmButton: false,
+      timer: 2000
+    }).then(function() {
+      if(resp.ok){
+        window.location.href="/login"
+      }
+    })
   }
 
   return ( 

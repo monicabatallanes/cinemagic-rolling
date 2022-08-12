@@ -1,5 +1,5 @@
-import { useForm } from 'react-hook-form';
-import Swal from 'sweetalert2';
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const LoginPanel = () => {
   const urlBackend = process.env.REACT_APP_URL; 

@@ -28,13 +28,15 @@
   color: #ffff;
   font-size: 18px;
   font-weight: bold;
-  padding: 15px;
-  margin-left: 120px;
+  padding: 20px;
+  margin-left: 150px;
 }
 
 .contenedor-boton {
-  margin-left: 170px;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .boton-hero {
@@ -57,7 +59,7 @@
 }
 
 .planOferta {
-  margin-left: 110px;
+  margin-left: 140px;
   margin-top: 50px;
   width: 300px;
   height: 150px;
@@ -92,26 +94,23 @@
 
 @media screen and (max-width: 376px) {
   .contenedor {
-    width: 374PX;
+    width: 100%;
   } 
   .hero-image {
     width: auto;
     height: 30px;
-    margin: 10px
+    margin: 5px;
   }  
   .planOferta {
-    margin-left: 40px;
-    margin-top: 50px;
-    width: 300px;
+    margin: 10px;
+    width: 90%;
     height: 150px;
   }
   .heroTitle {
-    margin-left: 60px;
+    margin: 40px;
+    padding: 0;
   }
-  .contenedor-boton {
-      margin-left: 100px;
-      margin-top: 50px;
-  }
+  
   .contenedor hr {
     width: 300px;
     margin-left: 40px;

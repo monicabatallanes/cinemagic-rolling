@@ -52,3 +52,11 @@
     width: 100%;
   }
 }
+
+@media (max-width: 560px) {
+  .slider-zoom {
+    opacity: 1;
+    transform: scale(80%);
+    transition: 2s;
+  }
+}

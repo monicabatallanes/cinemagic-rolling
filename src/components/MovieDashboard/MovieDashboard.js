@@ -1,10 +1,10 @@
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import { useState } from "react";
 import "../MovieDashboard/movieDashboard.css"
-import iconSearch from '../../assets/images/search.svg';
-import iconClose from '../../assets/images/close.svg';
+import iconSearch from "../../assets/images/search.svg";
+import iconClose from "../../assets/images/close.svg";
 import GenresData from "../../Genres.json";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const MovieDashboard = (props) => {
   const urlBackend = process.env.REACT_APP_URL; 
@@ -202,11 +202,11 @@ const MovieDashboard = (props) => {
               <div className="searchIcon">
                 {suggestions.length === 0 ? (
                   <button className="boton-search-close">
-                    <img src={iconSearch} onClick={fillFields} />
+                    <img src={iconSearch} onClick={fillFields} alt="/#"/>
                   </button>
                 ) : (
                   <button className="boton-search-close" id="clearBtn" onClick={clearInput}>
-                    <img src={iconClose} />
+                    <img src={iconClose} alt="/#"/>
                   </button>
                 )}
               </div>

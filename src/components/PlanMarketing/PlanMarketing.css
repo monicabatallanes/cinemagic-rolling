@@ -1,3 +1,7 @@
+.container-fluid{
+  margin-right: 0;
+
+}
 .img {
   width: auto;
   height: 220px;
